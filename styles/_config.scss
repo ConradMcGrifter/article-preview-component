@@ -1,0 +1,17 @@
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+$colors: (
+    veryDarkBlue: hsl(217, 19%, 35%),
+    DesaturatedDarkBlue: hsl(214, 17%, 51%),
+    GrayishBlue: hsl(212, 23%, 69%),
+    LightGrayishBlue: hsl(210, 46%, 95%),
+);
+
+@mixin flexCenter($direction) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $direction;
+}
