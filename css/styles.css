@@ -1,3 +1,94 @@
+.share-popup {
+  width: 175px;
+  height: 40px;
+  background: #48556a;
+  position: absolute;
+  -webkit-transform: translate(79%, -125%);
+          transform: translate(79%, -125%);
+  border-radius: 10px;
+  z-index: 999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  color: white;
+  display: none;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.479);
+          box-shadow: 0 1px 5px rgba(0, 0, 0, 0.479);
+}
+
+@media screen and (max-width: 800px) {
+  .share-popup {
+    -webkit-transform: unset;
+            transform: unset;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    z-index: 1;
+    padding: 0 2em;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-shadow: unset;
+            box-shadow: unset;
+  }
+}
+
+.share-popup::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #48556a;
+  position: absolute;
+  -webkit-transform: translate(2px, 15px) rotate(45deg);
+          transform: translate(2px, 15px) rotate(45deg);
+  z-index: -1;
+}
+
+@media screen and (max-width: 800px) {
+  .share-popup::before {
+    display: none;
+  }
+}
+
+.share-popup.display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.share-popup img {
+  margin: 0 0.75em;
+  height: 15px;
+  width: 15px;
+}
+
+@media screen and (max-width: 800px) {
+  .share-popup img {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.share-popup p {
+  margin: 0 0.75em;
+  font-size: 1.2rem;
+  letter-spacing: 0.25em;
+  color: #6d7f97;
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -109,97 +200,6 @@ p {
   }
 }
 
-.card--container .share-popup {
-  width: 175px;
-  height: 40px;
-  background: #48556a;
-  position: absolute;
-  -webkit-transform: translate(79%, -125%);
-          transform: translate(79%, -125%);
-  border-radius: 10px;
-  z-index: 999;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  color: white;
-  display: none;
-  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.479);
-          box-shadow: 0 1px 5px rgba(0, 0, 0, 0.479);
-}
-
-@media screen and (max-width: 800px) {
-  .card--container .share-popup {
-    -webkit-transform: unset;
-            transform: unset;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 70px;
-    width: 100%;
-    border-radius: 0 0 10px 10px;
-    z-index: 1;
-    padding: 0 2em;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-shadow: unset;
-            box-shadow: unset;
-  }
-}
-
-.card--container .share-popup::before {
-  content: "";
-  width: 20px;
-  height: 20px;
-  background: #48556a;
-  position: absolute;
-  -webkit-transform: translate(2px, 15px) rotate(45deg);
-          transform: translate(2px, 15px) rotate(45deg);
-  z-index: -1;
-}
-
-@media screen and (max-width: 800px) {
-  .card--container .share-popup::before {
-    display: none;
-  }
-}
-
-.card--container .share-popup.display {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.card--container .share-popup img {
-  margin: 0 0.75em;
-  height: 15px;
-  width: 15px;
-}
-
-@media screen and (max-width: 800px) {
-  .card--container .share-popup img {
-    height: 20px;
-    width: 20px;
-  }
-}
-
-.card--container .share-popup p {
-  margin: 0 0.75em;
-  font-size: 1.2rem;
-  letter-spacing: 0.25em;
-  color: #6d7f97;
-}
-
 .card--container .content__p {
   line-height: 1.4;
   margin-bottom: 1em;
@@ -236,10 +236,6 @@ p {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 1.5em;
-}
-
-.card--container .author--wrap .share-icon--wrap {
-  position: relative;
 }
 
 .card--container .author--wrap .share-icon {
